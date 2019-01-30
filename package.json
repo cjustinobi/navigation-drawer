@@ -1,0 +1,22 @@
+{
+  "name": "responsive-nav",
+  "version": "1.0.0",
+  "description": "A simple responsive navigation done with Nuxt.js",
+  "author": "Cejowisz",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
+  "dependencies": {
+    "nuxt": "^2.3.4"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "push-dir": "^0.4.1"
+  }
+}
