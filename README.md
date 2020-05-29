@@ -2,6 +2,8 @@
 
 > A simple responsive navigation done with Nuxt.js
 
+[The Demo](https://simple-nuxt-nav.netlify.app)
+
 ## Build Setup
 
 ``` bash
