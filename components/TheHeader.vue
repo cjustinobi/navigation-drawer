@@ -21,7 +21,7 @@
 
 <script>
 
-    import AppLinks from '~/components/appLinks'
+    import AppLinks from '~/components/AppLinks'
 
 export default {
 

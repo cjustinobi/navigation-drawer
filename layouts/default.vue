@@ -26,6 +26,22 @@
             TheHeader,
             TheSideNav,
             TheFooter
+        },
+
+        computed: {
+
+            isSidebar() {
+                return this.$store.getters['nav/toggleSidebar']
+            }
+
+        },
+
+        watch: {
+            '$route': function() {
+                if (process.client && this.isSidebar && window.innerWidth < 768) {
+                    this.$store.dispatch('nav/toggleSidebar')
+                }
+            },
         }
 
     }

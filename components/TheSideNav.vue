@@ -1,13 +1,15 @@
 <template>
     <div class="sidenav-container">
 
-        <div v-if="toggleSidebar" class="backdrop" @click="$store.dispatch('nav/toggleSidebar')"></div>
+        <div v-if="isSidebar" class="backdrop" @click="hideSidebar"></div>
 
         <transition name="slide-side">
-            <div v-if="toggleSidebar" class="sidenav">
+            <div v-if="isSidebar" class="sidenav">
+                <span @click="hideSidebar">&#128473;</span>
                 <app-links></app-links>
             </div>
         </transition>
+
 
     </div>
 </template>
@@ -20,9 +22,15 @@
 
         components: { AppLinks },
 
+        methods: {
+            hideSidebar() {
+                this.$store.dispatch('nav/toggleSidebar')
+            }
+        },
+
         computed: {
 
-            toggleSidebar() {
+            isSidebar() {
                 return this.$store.getters['nav/toggleSidebar']
             }
 
@@ -50,6 +58,12 @@
         left: 0;
         box-sizing: border-box;
         padding: 30px;
+    }
+
+    .sidenav span {
+        position: absolute;
+        right: 20px;
+        top: 20px;
     }
 
     .backdrop {
